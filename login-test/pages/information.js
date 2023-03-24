@@ -6,8 +6,8 @@ import Link from "next/link";
 const { Title } = Typography;
 
 function Information() {
-  const [userName, setUserName] = useState();
-  if (typeof window != "undefined") {
+  const [userName, setUserName] = useState(null);
+  if (typeof window !== "undefined") {
     useEffect(() => setUserName(localStorage.getItem("username")));
   }
 
