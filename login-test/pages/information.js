@@ -6,7 +6,10 @@ import Link from "next/link";
 const { Title } = Typography;
 
 const Information = () => {
-  const userName = localStorage.getItem("username");
+  if (localStorage != null) {
+    const userName = localStorage.getItem("username");
+  }
+
 
   return (
     <div className='info_center'>
