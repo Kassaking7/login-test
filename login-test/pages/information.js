@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography } from 'antd';
 import Router from 'next/router';
 import Link from "next/link";
 
 const { Title } = Typography;
 
-const Information = () => {
-  if (localStorage != null) {
-    const userName = localStorage.getItem("username");
+function Information() {
+  const [userName, setUserName] = useState();
+  if (typeof window != "undefined") {
+    useEffect(() => setUserName(localStorage.getItem("username")));
   }
 
 
